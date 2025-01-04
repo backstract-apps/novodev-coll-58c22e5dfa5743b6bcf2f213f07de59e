@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e-depl
+  labels:
+    app: novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e
+  template:
+    metadata:
+      labels:
+        app: novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e
+    spec:
+      containers:
+        - name: novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:novodev-coll-58c22e5dfa5743b6bcf2f213f07de59e
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9028
